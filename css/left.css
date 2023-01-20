@@ -1,0 +1,85 @@
+/*Global*/
+html, body {
+  width: 48%;
+  margin: 0;
+  padding: 0;
+  font-family: helvetica, sans-serif;
+}
+
+/*Func*/
+
+ .item ul,[type="checkbox"] {
+  display: none;
+}
+#menu:checked ~ .multi-level, .item input:checked ~ ul {
+  display: block;
+}
+
+/*Arrow*/
+
+.arrow {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  float: left;
+  z-index: 0;
+  margin: 17px 1em 0 2em;
+}
+.item input + .arrow {
+  transform: rotate(-90deg);
+  transition: 0.1s;
+}
+.item input:checked + .arrow {
+  transform: rotate(0deg);
+  transition: 0.1s;
+}
+
+
+
+/*Styles*/
+
+label:hover {
+  cursor: pointer;
+}
+label {
+  width: 100%;
+  display: block;
+  z-index: 3;
+  position: relative;
+}
+
+.nav li:hover{
+  background-color: rgb(221, 225, 221);
+}
+.nav ul, .nav li, label {
+  line-height: 50px;
+  margin: 0;
+  padding: 0 2em;
+  list-style: none;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 100;
+  width: 100%;
+  background-color: rgb(184, 220, 149);
+}
+.item ul {
+  padding: 0 0.25em;
+}
+.nav li a {
+  line-height: 50px;
+  margin: 0;
+  padding: 0 4em;
+  list-style: none;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 100;
+}
+
+
+
+
+
+
+
+
+

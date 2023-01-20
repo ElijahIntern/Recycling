@@ -1,0 +1,22 @@
+.Btn {
+  background-color: #06c07c;
+  color: white;
+  padding: 15px 9px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 28%;
+}
+
+.pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 34%;
+}
+
+.text1 {
+  text-align: center;
+  padding: 22px;
+  top: 8px;
+}
