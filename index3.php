@@ -1,41 +1,63 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>login</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Css/Login.css">
+    <title>Login and Register using PDO PHP Mysql</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 </head>
-
 <body>
-    <header>
-        <?php include('Menu/Top Menu.php'); ?>
-    </header>
-
-    <form action="Login.php" method="post">
-        <div class="pic">
-            <img src="Img/recycle.jpg" alt="" width="300" height="200">
-            <div class="text1">
-                <a>Welkom Bij ReMas, het REcycle Management System voor het project Superior Waste van de gemeente
-                    Emserveen.</a>
+<div class="container">
+    <h1 class="text-center" style="margin-top:30px;">Welkom Bij Remas, het Recycle Management system voor het project</h1>
+    <hr>
+    <div class="row justify-content-md-center">
+        <div class="col-md-5">
+            <?php 
+                if(isset($_SESSION['error'])){
+                    echo "
+                        <div class='alert alert-danger text-center'>
+                            <i class='fas fa-exclamation-triangle'></i> ".$_SESSION['error']."
+                        </div>
+                    ";
+  
+                    //unset error
+                    unset($_SESSION['error']);
+                }
+  
+                if(isset($_SESSION['success'])){
+                    echo "
+                        <div class='alert alert-success text-center'>
+                            <i class='fas fa-check-circle'></i> ".$_SESSION['success']."
+                        </div>
+                    ";
+  
+                    //unset success
+                    unset($_SESSION['success']);
+                }
+            ?>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign in your account</h5>
+                    <hr>
+                    <form method="POST" action="login.php">
+                        <div class="mb-3">
+                            <label for="email">Gerbruikername</label>
+                            <input class="form-control" type="uname" id="uname" name="uname" value="<?php echo (isset($_SESSION['uname'])) ? $_SESSION['uname'] : ''; unset($_SESSION['email']) ?>" placeholder="Gebruikername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                                <input class="form-control" type="password" id="password" name="password" value="<?php echo (isset($_SESSION['password'])) ? $_SESSION['password'] : ''; unset($_SESSION['password']) ?>" placeholder="Password" required>
+                        </div>
+                    <hr>
+                    <div>
+                        <button type="submit" class="btn btn-primary" name="login"><i class="fas fa-sign-in-alt"></i> Login</button>
+                        <a href="register_form.php">Register a new account</a>
+                    </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="error">
-            <?php echo $_GET['error']; ?>
-        </p>
-        <?php } ?>
-        <div class="log">
-            <label>Gerbruikernaam</label>
-            <input type="text" name="uname" placeholder="Gerbruikernaam"></br>
-            <label>Wachtwoord</label>
-            <input type="password" name="password" placeholder="Wachtwoord"></br>
-            <button type="Submit" class="Btn">Login</button>
-        </div>
-    </form>
+    </div>
 </body>
-
 </html>

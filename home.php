@@ -1,18 +1,17 @@
-
-    <?php
-include 'header.php';
-include 'Menu/leftMenu.php';
-    ?>
-    <h1>hallo,
-        <?php echo $_SESSION['user_name']; ?>
-    </h1>
-    <a href="loguit.php">logout</a>
-</body>
-
-</html>
 <?php
-} else {
-    header("location: index3.php");
-    exit();
-}
-    ?>
+include 'topMenu.php';
+include 'Menu/leftMenu.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

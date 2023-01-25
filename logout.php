@@ -1,7 +1,6 @@
 <?php
+//logout.php  
 session_start();
-
-session_unset();
-session_abort();
-
-header("location: index3.php");
+session_destroy();
+header("location:login.php");
+?>
