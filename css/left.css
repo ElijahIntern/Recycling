@@ -1,9 +1,6 @@
 /*Global*/
 html, body {
-  width: 48%;
-  margin: 0;
-  padding: 0;
-  font-family: helvetica, sans-serif;
+
 }
 
 /*Func*/
@@ -48,10 +45,10 @@ label {
   position: relative;
 }
 
-.nav li:hover{
+.nav2 li:hover{
   background-color: rgb(221, 225, 221);
 }
-.nav ul, .nav li, label {
+.nav2 ul, .nav li, label {
   line-height: 50px;
   margin: 0;
   padding: 0 2em;
@@ -59,13 +56,13 @@ label {
   text-decoration: none;
   color: #000000;
   font-weight: 100;
-  width: 100%;
+  width: 50%;
   background-color: rgb(184, 220, 149);
 }
 .item ul {
   padding: 0 0.25em;
 }
-.nav li a {
+.nav2 li a {
   line-height: 50px;
   margin: 0;
   padding: 0 4em;
@@ -75,8 +72,30 @@ label {
   font-weight: 100;
 }
 
+.button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
 
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 
 
 

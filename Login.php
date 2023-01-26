@@ -19,17 +19,17 @@ try {
                     'username' => $_POST["username"],
                 )
             );
-            
+
             if ($statement->rowCount() > 0) {
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
 
                 if (password_verify($_POST['password'], $row['password'])) {
                     $_SESSION["username"] = $_POST["username"];
-                    header("location: login_succes.php");
+                    header("location: home.php");
 
                     exit;
                 }
- 
+
                 $message = '<label>Wrong password</label>';
             } else {
                 $message = '<label>Wrong Data</label>';
@@ -64,12 +64,12 @@ try {
         <h3>Welkom bij Remas,
         </h3>
         <h4>Het Recycle Managemnt System voor het project Superior Waste van de gemeente Emserveen</h4><br />
-        <form method="post" >
+        <form method="post">
             <label>Username</label>
             <input type="text" name="username" class="form-control" value="elijah" />
             <br />
             <label>Password</label>
-            <input type="password" name="password" class="form-control" value="test123"/>
+            <input type="password" name="password" class="form-control" value="test123" />
             <br />
             <input type="submit" name="login" class="btn btn-info" value="Login" />
         </form>

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<nav class="navbar" style="background-color: rgb(103, 191, 14)"">
+<nav class="navbar" style="background-color: rgb(103, 191, 14)">
   <div class="container-fluid">
     <form class="d-flex">
       <h3>ReMaS Superior Waste Recycling<h3>
