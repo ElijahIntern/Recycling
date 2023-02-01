@@ -1,13 +1,20 @@
 <?php
+
 session_start();
+
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "recycling";
 $message = "";
+
 try {
     $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
     $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+
     if (isset($_POST["login"])) {
         if (empty($_POST["username"]) || empty($_POST["password"])) {
             $message = '<label>All fields are required</label>';
@@ -40,6 +47,8 @@ try {
     $message = $error->getMessage();
 }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
